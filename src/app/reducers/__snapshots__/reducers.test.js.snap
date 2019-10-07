@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` Orders Reducer  Should add orders to empty initialState  1`] = `
+Object {
+  "errors": null,
+  "orders": Array [
+    Object {
+      "deadline": "2012-09-06 09:02:23",
+      "worker": Object {
+        "worker": Object {
+          "company": "cisco",
+          "name": "kayongo david",
+        },
+      },
+    },
+    Object {
+      "deadline": "2012-09-06 09:02:23",
+      "worker": Object {
+        "worker": Object {
+          "company": "cisco",
+          "name": "kayongo david",
+        },
+      },
+    },
+    Object {
+      "deadline": "2012-09-06 09:02:23",
+      "worker": Object {
+        "worker": Object {
+          "company": "cisco",
+          "name": "kayongo david",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[` Orders Reducer  Should add orders to non empty initialState  1`] = `
+Object {
+  "errors": null,
+  "orders": Array [
+    Object {
+      "deadline": "2012-09-06 09:02:23",
+      "worker": Object {
+        "worker": Object {
+          "company": "cisco",
+          "name": "paul david",
+        },
+      },
+    },
+  ],
+}
+`;
