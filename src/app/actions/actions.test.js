@@ -56,62 +56,62 @@ describe(' should create action creators ', ()=> {
 
 
 
-describe('should create async action creators', () => {
-    let store;
-    beforeEach(()=>{
-        store = mockStore({})
-    });
-    afterEach(() => {
-        fetchMock.restore();
-    });
+// describe('should create async action creators', () => {
+//     let store;
+//     beforeEach(()=>{
+//         store = mockStore({})
+//     });
+//     afterEach(() => {
+//         fetchMock.restore();
+//     });
 
-    // it('Should fetch orders if exists', ()=>{
-    //     mockFetch('orders',200, '{"title": "hello"}')
-    //      return store.dispatch(HatchActionCreators.fetchOrders()).then(() => {
-    //         expect(store.getActions()).toEqual([]);
-    //     })
-    // });
+//     // it('Should fetch orders if exists', ()=>{
+//     //     mockFetch('orders',200, '{"title": "hello"}')
+//     //      return store.dispatch(HatchActionCreators.fetchOrders()).then(() => {
+//     //         expect(store.getActions()).toEqual([]);
+//     //     })
+//     // });
 
-    it(' create async action to fetch orders ', () => {
-        fetchMock.getOnce('orders' , {
-            "orders" : {"orders": [{
-                "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
-               "deadline": "2012-09-06 09:02:23"
-            } ,
-            {
-                "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
-               "deadline": "2012-09-06 09:02:23"
-            },
-            {
-                "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
-               "deadline": "2012-09-06 09:02:23"
-            } ]},
-            headers: 'content-type: application/json'
-        });
+//     it(' create async action to fetch orders ', () => {
+//         fetchMock.getOnce('orders' , {
+//             "orders" : {"orders": [{
+//                 "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
+//                "deadline": "2012-09-06 09:02:23"
+//             } ,
+//             {
+//                 "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
+//                "deadline": "2012-09-06 09:02:23"
+//             },
+//             {
+//                 "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
+//                "deadline": "2012-09-06 09:02:23"
+//             } ]},
+//             headers: 'content-type: application/json'
+//         });
 
-        const expectedActions = [
-            {type: REQUEST_WORK_ORDERS},
-            {type: RECIEVE_WORK_ORDERS, success: true, payload : {'orders': [{
-                "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
-               "deadline": "2012-09-06 09:02:23"
-            } ,
-            {
-                "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
-               "deadline": "2012-09-06 09:02:23"
-            },
-            {
-                "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
-               "deadline": "2012-09-06 09:02:23"
-            } ]}, }
-        ]
+//         const expectedActions = [
+//             {type: REQUEST_WORK_ORDERS},
+//             {type: RECIEVE_WORK_ORDERS, success: true, payload : {'orders': [{
+//                 "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
+//                "deadline": "2012-09-06 09:02:23"
+//             } ,
+//             {
+//                 "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
+//                "deadline": "2012-09-06 09:02:23"
+//             },
+//             {
+//                 "worker": {"worker":{"name":"kayongo david","company": "cisco"}},
+//                "deadline": "2012-09-06 09:02:23"
+//             } ]}, }
+//         ]
 
-        const store = mockStore({orders: []});
-        const pprint = store.dispatch(HatchActionCreators.fetchOrders());
-        console.log(pprint)
-        return store.dispatch(HatchActionCreators.fetchOrders()).then((data) => {
-            expect(store.getActions()).toEqual(expectedActions);
-        })
-    });
-});
+//         const store = mockStore({orders: []});
+//         const pprint = store.dispatch(HatchActionCreators.fetchOrders());
+//         console.log(pprint)
+//         return store.dispatch(HatchActionCreators.fetchOrders()).then((data) => {
+//             expect(store.getActions()).toEqual(expectedActions);
+//         })
+//     });
+// });
 
 

@@ -79,28 +79,21 @@ describe('Switch component', () => {
 
 });
 
-describe('Toggle component', ()=>{
-    let component;
-    beforeEach(()=> {
-        const initialState = {
-            tab: false,
-        }
-        component = toggleSetUp(initialState);
-    });
+// describe('Toggle component', ()=>{
+//     let component;
+//     beforeEach(()=> {
+//         const initialState = {
+//             tab: false,
+//         }
+//         component = toggleSetUp(initialState);
+//     });
 
-   it('should render without errors', ()=> {
-        const wrapper = findBytestAttr(component, 'ToggleComponent');
-        expect(wrapper.length).toBe(1);
-   });
+//    it('should render without errors', ()=> {
+//         const wrapper = findBytestAttr(component, 'ToggleComponent');
+//         expect(wrapper.length).toBe(1);
+//    })
 
-    it('should access state and props', () =>{
-    const classInstance = component.instance();
-    const state = classInstance.props.store.getState();
-    expect(classInstance.props.tab).toBe(false);
-    expect(state.tab).toBe(false)
-});
-
-});
+// });
 
 describe('OrderMeta component', () => {
 

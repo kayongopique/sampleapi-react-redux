@@ -10,7 +10,7 @@ const orders = (state = [], action) => {
             return {
                 ...state,
                 orders: action.payload.orders? 
-                sortAscending(action.payload.orders ): sortAscending(action.payload.orders ),
+                sortAscending(action.payload.orders ): [],
                 errors: action.payload.errors ? action.payload.errors : null, 
             }
     
