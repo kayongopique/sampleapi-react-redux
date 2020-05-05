@@ -21,9 +21,19 @@ class Switch extends React.Component {
       .filter(Boolean)
       .join(' ')
     return (
-      <label data-test ="switchComponent"
+      <div style={{
+        display: 'flex', 
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+      }}>
+        <h4
+        style={{color: 'gray'}}
+        >Ealiest deadline</h4>
+         <label data-test ="switchComponent"
         aria-label={ariaLabel || 'Toggle'}
-        style={{display: 'block'}}
+        style={{
+          display: 'block'
+        }}
       >
         
         <input
@@ -34,9 +44,13 @@ class Switch extends React.Component {
           onClick={onClick}
           data-test ="toggle-input"
         />
-       
         <span className={btnClassName} {...props} />
       </label>
+      <h4 style={{
+        color: 'gray'
+      }}>Latest deadline</h4>
+      </div>
+     
     )
   }
 }

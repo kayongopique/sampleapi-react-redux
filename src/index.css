@@ -38,8 +38,8 @@ body {
 }
 
   .card{
-    width: 400px;
-    height: 300px;
+    width: 300;
+    height: 400;
     background: rgb(56, 55, 55);
     border-radius: 10px;
     color: #ffffff;
@@ -55,10 +55,12 @@ body {
     border-bottom: 1px solid gray;
     padding-bottom: 5px;
   }
+
   section{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+
   }
 
   .order-meta img{
@@ -69,25 +71,29 @@ body {
 
 .info .name{
   font-size: 22px;
-  padding: 2px;
-  margin: 5px;
+  /* padding: 2px;
+  margin: 5px; */
   text-transform: capitalize;
 }
 
 .info .company{
   font-size: 18px;
-  margin: 5px;
+  /* margin: 5px;
   margin-left: 30px;
-  padding: 10px;
+  padding: 10px; */
   text-transform: capitalize;
 }
 
 .date{
-  position: absolute;
-  font-size: 16px;
-  top:150px;
-  left:150px;
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+ 
 
+}
+.switch-section {
+  display: grid;
+  grid-template-columns: auto;
 }
 
    

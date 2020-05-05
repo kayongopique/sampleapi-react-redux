@@ -9,7 +9,8 @@ const orders = (state = [], action) => {
         case RECIEVE_WORK_ORDERS:
             return {
                 ...state,
-                orders: sortAscending(action.payload.orders ),
+                orders: action.payload.orders? 
+                sortAscending(action.payload.orders ): sortAscending(action.payload.orders ),
                 errors: action.payload.errors ? action.payload.errors : null, 
             }
     

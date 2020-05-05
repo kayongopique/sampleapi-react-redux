@@ -8,8 +8,8 @@ const login = () => {
    
 
     let data ={
-        name:"kayongo david",
-        email:"kayongo@gmail.com"
+        name:"admin",
+        email:"admin@gmail.com"
     }
     fetch(url, {
         method:'POST',
@@ -46,7 +46,7 @@ function client(endpoint, {body, ...customConfig} = {}) {
     }
   
     return window
-      .fetch(`http://127.0.0.1:5000/api/${endpoint}`, config)
+      .fetch(`https://www.hatchways.io/api/assessment/${endpoint}`, config)
       .then(r => r.json())
   }
 
@@ -56,8 +56,10 @@ let HatchAPI = {
     
     fetchworker_orders() { 
        return this.fetchorders().then(orders => {
+           console.log(orders);
+           
             const ordersWithworkers = orders.orders.map(async order => {
-                order.worker = await this.fetchworker(order.worker_id)
+                order.worker = await this.fetchworker(order.workerId)
                 return order;
             });
         const resolvedorders = Promise.all(ordersWithworkers)
@@ -73,7 +75,7 @@ let HatchAPI = {
     }, 
 
     fetchorders(){
-        return client('orders');  
+        return client('work_orders');  
     }
     
 };

@@ -8,16 +8,27 @@ const OrderMeta = props => {
   return (
        <article className="card">
               <div className="order-meta" data-test='orderMetaComponent'>
-            <h1>#{order.orderid}</h1>
+            <h1>Work Order #{order.id}</h1>
             <section>
-            <div><img src='../actions/img/david.JPG' alt={order.worker.name} /></div>
+            <div><img src={order.worker.worker.image} alt={order.worker.worker.name} /></div>
               
               <div className="info" data-test='worker-info'>
                   <div className='name'>{order.worker.worker.name}</div>
-                  <div className='company'>{order.worker.worker.company}</div>
-                <span className="date" data-test='order-date'>
+                  <div
+                  style={{
+                    color: 'white',
+                    fontSize: 16
+                  }}
+                  className='company'>{order.worker.worker.companyName}</div>
+                  <div 
+                   style={{
+                    color: 'white',
+                    fontSize: 14
+                  }}
+                  className='email'>{order.worker.worker.email}</div>
+                <div className="date" data-test='order-date'>
                   {new Date(order.deadline).toUTCString()}
-                </span>
+                </div>
               </div>
             </section>
            
