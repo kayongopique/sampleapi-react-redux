@@ -21,6 +21,7 @@ follow the following instructions.
 
 After you've made sure to have the correct things (and versions) installed, you
 should be able to just run a few commands to get set up:
+Note: send me an email to grant you collaborator privillages as the repo is private
 
 ```
 git clone https://github.com/kayongopique/sampleapi-react-redux.git
